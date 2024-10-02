@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :calculator, only: :show
+  resource :calculator, only: %i[show update]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
