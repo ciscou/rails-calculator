@@ -10,7 +10,7 @@ class CalculatorsController < ApplicationController
   private
 
     def calculate
-      eval params[:expression]
+      Expressionist::Parser.new.parse(params[:expression]).to_f
     rescue
       "ERR"
     end
