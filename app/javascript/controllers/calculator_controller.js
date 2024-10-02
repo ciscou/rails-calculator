@@ -10,6 +10,7 @@ export default class extends Controller {
   }
 
   connect() {
+    this.justHitEnter = true
     console.log("connecting calculator")
   }
 
@@ -18,8 +19,25 @@ export default class extends Controller {
   }
 
   appendDigit({ params: { digit } }) {
+    if(this.justHitEnter) {
+      this.justHitEnter = false
+      this.displayValue = ""
+      this.evalValue = ""
+    }
+
     this.displayValue += digit
     this.evalValue += digit
+  }
+
+  appendDot() {
+    if(this.justHitEnter) {
+      this.justHitEnter = false
+      this.displayValue = "0"
+      this.evalValue = "0"
+    }
+
+    this.displayValue += "."
+    this.evalValue += "."
   }
 
   appendOperand({ params: { operandToDisplay, operandToEval } }) {
