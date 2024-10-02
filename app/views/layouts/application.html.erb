@@ -17,7 +17,16 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
+  <body class="p-32">
     <%= yield %>
+
+    <ul data-controller="log" class="log-container max-w-sm mx-auto mt-8 font-mono">
+    </ul>
+
+    <ul data-controller="log" class="log-container max-w-sm mx-auto mt-8 font-mono">
+    </ul>
+
+    <ul data-controller="log" class="log-container max-w-sm mx-auto mt-8 font-mono">
+    </ul>
   </body>
 </html>

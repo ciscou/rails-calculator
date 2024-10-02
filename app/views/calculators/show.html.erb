@@ -1,2 +1,26 @@
-<h1>Calculators#show</h1>
-<p>Find me in app/views/calculators/show.html.erb</p>
+<div data-controller="calculator" data-calculator-log-outlet=".log-container" class="max-w-xs mx-auto grid grid-cols-4 gap-2 bg-gray-400 p-4 rounded-lg">
+  <div class="col-span-4 bg-orange-200 p-4 rounded">
+    <div data-calculator-target="display" class="text-right">Loading...</div>
+    <div data-calculator-target="result" class="text-right text-xl">Loading...</div>
+  </div>
+  <button class="btn btn-error" data-action="calculator#allClear">AC</button>
+  <button class="btn btn-neutral">(</button>
+  <button class="btn btn-neutral">)</button>
+  <button class="btn btn-neutral" data-action="calculator#appendOperand" data-calculator-operand-to-display-param="&divide;" data-calculator-operand-to-eval-param="/">&divide;</button>
+  <button class="btn" data-action="calculator#appendDigit" data-calculator-digit-param="7">7</button>
+  <button class="btn" data-action="calculator#appendDigit" data-calculator-digit-param="8">8</button>
+  <button class="btn" data-action="calculator#appendDigit" data-calculator-digit-param="9">9</button>
+  <button class="btn btn-neutral" data-action="calculator#appendOperand" data-calculator-operand-to-display-param="&times;" data-calculator-operand-to-eval-param="*">&times;</button>
+  <button class="btn" data-action="calculator#appendDigit" data-calculator-digit-param="4">4</button>
+  <button class="btn" data-action="calculator#appendDigit" data-calculator-digit-param="5">5</button>
+  <button class="btn" data-action="calculator#appendDigit" data-calculator-digit-param="6">6</button>
+  <button class="btn btn-neutral" data-action="calculator#appendOperand" data-calculator-operand-to-display-param="&minus;" data-calculator-operand-to-eval-param="-">&minus;</button>
+  <button class="btn" data-action="calculator#appendDigit" data-calculator-digit-param="1">1</button>
+  <button class="btn" data-action="calculator#appendDigit" data-calculator-digit-param="2">2</button>
+  <button class="btn" data-action="calculator#appendDigit" data-calculator-digit-param="3">3</button>
+  <button class="btn btn-neutral" data-action="calculator#appendOperand" data-calculator-operand-to-display-param="&plus;" data-calculator-operand-to-eval-param="+">&plus;</button>
+  <button class="btn" data-action="calculator#appendDigit" data-calculator-digit-param="0">0</button>
+  <button class="btn btn-neutral">.</button>
+  <button class="btn btn-neutral">del</button>
+  <button class="btn btn-primary" data-action="calculator#calculate">=</button>
+</div>
