@@ -31,7 +31,6 @@ export default class extends Controller {
 
   appendDot() {
     if(this.justHitEnter) {
-      this.justHitEnter = false
       this.displayValue = "0"
       this.evalValue = "0"
     }
@@ -40,9 +39,24 @@ export default class extends Controller {
     this.evalValue += "."
   }
 
+  appendOpenParen() {
+    this.displayValue += "("
+    this.evalValue += "("
+  }
+
+  appendCloseParen() {
+    this.displayValue += ")"
+    this.evalValue += ")"
+  }
+
   appendOperand({ params: { operandToDisplay, operandToEval } }) {
     this.displayValue += operandToDisplay
     this.evalValue += operandToEval
+  }
+
+  delete() {
+    this.displayValue = this.displayValue.slice(0, -1)
+    this.evalValue = this.evalValue.slice(0, -1)
   }
 
   allClear() {
@@ -51,10 +65,12 @@ export default class extends Controller {
   }
 
   displayValueChanged() {
+    this.justHitEnter = false
     this.displayTarget.innerHTML = this.displayValue || "0"
   }
 
   evalValueChanged() {
+    this.justHitEnter = false
     this.evalTarget.value = this.evalValue || "0"
   }
 }

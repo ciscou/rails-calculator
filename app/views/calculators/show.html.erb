@@ -17,8 +17,8 @@
     <div data-calculator-target="display" class="text-right text-xl">Loading...</div>
   </div>
   <button class="btn btn-error" data-action="calculator#allClear:prevent">AC</button>
-  <button class="btn btn-neutral">(</button>
-  <button class="btn btn-neutral">)</button>
+  <button class="btn btn-neutral" data-action="calculator#appendOpenParen:prevent">(</button>
+  <button class="btn btn-neutral" data-action="calculator#appendCloseParen:prevent">)</button>
   <button class="btn btn-neutral" data-action="calculator#appendOperand:prevent" data-calculator-operand-to-display-param="&divide;" data-calculator-operand-to-eval-param="/">&divide;</button>
   <button class="btn" data-action="calculator#appendDigit:prevent" data-calculator-digit-param="7">7</button>
   <button class="btn" data-action="calculator#appendDigit:prevent" data-calculator-digit-param="8">8</button>
@@ -34,7 +34,7 @@
   <button class="btn btn-neutral" data-action="calculator#appendOperand:prevent" data-calculator-operand-to-display-param="&plus;" data-calculator-operand-to-eval-param="+">&plus;</button>
   <button class="btn" data-action="calculator#appendDigit:prevent" data-calculator-digit-param="0">0</button>
   <button class="btn btn-neutral" data-action="calculator#appendDot:prevent">.</button>
-  <button class="btn btn-neutral">del</button>
-  <button class="btn btn-primary" data-action="calculator#calculate">=</button>
+  <button class="btn btn-neutral" data-action="calculator#delete:prevent">del</button>
+  <button class="btn btn-primary">=</button>
 <% end %>
 <% end %>
